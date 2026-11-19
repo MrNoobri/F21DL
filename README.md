@@ -41,7 +41,7 @@ The spectrograms are not stored here, since the competition rules forbid redistr
 Python 3.12.
 
 ```powershell
-py -3.12 -m venv .venv
+py -m venv .venv
 .venv\Scripts\Activate.ps1      # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 ```
