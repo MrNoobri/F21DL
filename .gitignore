@@ -1,0 +1,17 @@
+# Keeps downloaded data, credentials and caches out of git (Kaggle forbids redistributing the spectrograms).
+data/raw/
+data/processed/
+*.zip
+*.part
+*.npy
+kaggle.json
+access_token
+
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
+.vscode/
