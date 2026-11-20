@@ -1,0 +1,19 @@
+{
+  "name": "logreg_summary",
+  "pipeline": "spec",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.7473,
+    "macro_precision": 0.7448,
+    "macro_recall": 0.7473,
+    "macro_f1": 0.7454,
+    "macro_fpr": 0.0505,
+    "mcc": 0.697,
+    "macro_auc_ovr": 0.9403
+  },
+  "params": {
+    "C": 1.0
+  },
+  "notes": "",
+  "saved": "2026-11-20T16:31:17"
+}
