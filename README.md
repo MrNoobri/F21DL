@@ -1,6 +1,6 @@
 # Music genre classification from audio features and mel-spectrograms
 
-F20DL Data Mining and Machine Learning, 2026–27. UG Group 12, Heriot-Watt University Dubai.
+F20DL Data Mining and Machine Learning, UG Group 12
 
 Abdullah Ishraq, Ahmed Khan, Aryadathan Karyadath, Nayela Ehtesham, Luke Nagooroo
 
