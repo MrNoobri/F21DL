@@ -1,0 +1,28 @@
+{
+  "name": "cnn",
+  "pipeline": "spec",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.852,
+    "macro_precision": 0.8596,
+    "macro_recall": 0.852,
+    "macro_f1": 0.8516,
+    "macro_fpr": 0.0296,
+    "mcc": 0.824,
+    "macro_auc_ovr": 0.9844
+  },
+  "params": {
+    "architecture": "C: 4 blocks + dropout",
+    "filters": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "dropout": 0.3,
+    "epochs": 18,
+    "n_params": 390822
+  },
+  "notes": "",
+  "saved": "2026-11-20T15:41:10"
+}
