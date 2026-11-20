@@ -1,0 +1,20 @@
+{
+  "name": "knn",
+  "pipeline": "fma",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.2975,
+    "macro_precision": 0.308,
+    "macro_recall": 0.2975,
+    "macro_f1": 0.2938,
+    "macro_fpr": 0.1004,
+    "mcc": 0.1988,
+    "macro_auc_ovr": 0.666
+  },
+  "params": {
+    "n_neighbors": 3,
+    "weights": "distance"
+  },
+  "notes": "",
+  "saved": "2026-11-20T13:31:23"
+}

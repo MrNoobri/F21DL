@@ -1,0 +1,19 @@
+{
+  "name": "logistic_regression",
+  "pipeline": "fma",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.4512,
+    "macro_precision": 0.4494,
+    "macro_recall": 0.4512,
+    "macro_f1": 0.4494,
+    "macro_fpr": 0.0784,
+    "mcc": 0.3731,
+    "macro_auc_ovr": 0.8131
+  },
+  "params": {
+    "C": 0.01
+  },
+  "notes": "",
+  "saved": "2026-11-20T13:31:23"
+}

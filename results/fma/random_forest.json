@@ -1,0 +1,21 @@
+{
+  "name": "random_forest",
+  "pipeline": "fma",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.49,
+    "macro_precision": 0.4872,
+    "macro_recall": 0.49,
+    "macro_f1": 0.4867,
+    "macro_fpr": 0.0729,
+    "mcc": 0.4175,
+    "macro_auc_ovr": 0.828
+  },
+  "params": {
+    "max_depth": null,
+    "max_features": "sqrt",
+    "n_estimators": 300
+  },
+  "notes": "",
+  "saved": "2026-11-20T13:31:24"
+}

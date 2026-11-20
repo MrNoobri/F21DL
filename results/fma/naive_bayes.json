@@ -1,0 +1,19 @@
+{
+  "name": "naive_bayes",
+  "pipeline": "fma",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.3713,
+    "macro_precision": 0.3867,
+    "macro_recall": 0.3712,
+    "macro_f1": 0.3494,
+    "macro_fpr": 0.0898,
+    "mcc": 0.2866,
+    "macro_auc_ovr": 0.781
+  },
+  "params": {
+    "var_smoothing": 0.1
+  },
+  "notes": "",
+  "saved": "2026-11-20T13:31:23"
+}

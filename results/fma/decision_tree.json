@@ -1,0 +1,21 @@
+{
+  "name": "decision_tree",
+  "pipeline": "fma",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.3625,
+    "macro_precision": 0.3626,
+    "macro_recall": 0.3625,
+    "macro_f1": 0.3598,
+    "macro_fpr": 0.0911,
+    "mcc": 0.2719,
+    "macro_auc_ovr": 0.7398
+  },
+  "params": {
+    "criterion": "gini",
+    "max_depth": 10,
+    "min_samples_leaf": 50
+  },
+  "notes": "",
+  "saved": "2026-11-20T13:31:23"
+}
