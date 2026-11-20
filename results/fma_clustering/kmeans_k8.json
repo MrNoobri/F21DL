@@ -1,0 +1,18 @@
+{
+  "name": "kmeans_k8",
+  "pipeline": "fma_clustering",
+  "split": "training",
+  "metrics": {
+    "ari": 0.0808,
+    "nmi": 0.1327,
+    "silhouette": 0.0281,
+    "inertia": 2414134.1844
+  },
+  "params": {
+    "k": 8,
+    "pca_components": 143,
+    "best_silhouette_k": 2
+  },
+  "notes": "",
+  "saved": "2026-11-20T11:50:05"
+}
