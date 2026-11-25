@@ -19,6 +19,17 @@ Research questions:
 2. Does an MLP beat the best classical model on the same features?
 3. Does a CNN on spectrograms beat a linear model on summary statistics of the same spectrograms?
 
+## Milestones
+
+| Week | Milestone                                | Requirement |
+| ---- | ---------------------------------------- | ----------- |
+| 4    | Project pitch                            | R1          |
+| 10   | Data pipeline, FMA EDA and clustering    | R2          |
+| 10   | Classical models and MLP                 | R3, R4      |
+| 11   | Spectrogram analysis, CNN, final results | R2, R4      |
+| 11   | Report and repository submitted          | D2          |
+| 12   | Mini-viva                                | D3          |
+
 ## Data
 
 |              | FMA Small features                                                                                                                                | Mel-spectrograms                                                                                                                                                                                               |
