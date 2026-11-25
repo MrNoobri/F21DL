@@ -116,9 +116,9 @@ Running it again gives the same splits. Then run the notebooks in order:
 | ---------------------- | ------------------------------------------------------------------------- | ----------------- |
 | `00_quickstart`        | ZeroR baseline on both datasets                                           | both              |
 | `01_fma_eda`           | FMA data quality, scale, redundancy, relevance, PCA                       | FMA               |
-| `02_fma_clustering`    | k-means with elbow and silhouette, agreement with genres                  | FMA               |
-| `03_fma_baselines`     | NB, logistic regression, decision tree, KNN, random forest (about 10 min) | FMA               |
-| `04_fma_mlp`           | Keras MLP, 4 architectures, learning-rate check, overfitting experiment   | FMA               |
+| `02_fma_clustering`    | k-means with elbow and silhouette, agreement with genres; GMM and Ward agglomerative clustering compared | FMA |
+| `03_fma_baselines`     | NB, logistic regression, decision tree, KNN, random forest; default vs tuned, Trees 1-3, NB variants, feature subsets (about 20 min) | FMA |
+| `04_fma_mlp`           | Keras MLP, 4 architectures, learning-rate check, overfitting experiment, bootstrap comparison with the random forest | FMA |
 | `05_spec_eda_baseline` | Spectrogram EDA, leakage check, logistic regression on summary features   | spectrograms      |
 | `06_spec_cnn`          | 3 CNN architectures (Kaggle GPU, about 25 min)                            | spectrograms, GPU |
 | `07_results`           | Final tables, hypothesis verdicts, error analysis, notebook run check     | FMA               |
@@ -150,6 +150,7 @@ Notebooks: [01 EDA](notebooks/01_fma_eda.ipynb) · [02 clustering](notebooks/02_
 | -------------------------------------- | -------------------- |
 | PCA components for 90% of FMA variance | 143 of 518           |
 | k-means (k = 8) vs genres              | ARI 0.081, NMI 0.133 |
+| Ward / GMM (k = 8) vs genres           | ARI 0.077 / 0.023    |
 | Exact duplicate spectrograms           | 0 of 17,382          |
 
 ![FMA tracks on two principal components, by cluster and by genre](figures/fma_kmeans_pca.png)
@@ -166,6 +167,7 @@ Notebooks: [03 baselines](notebooks/03_fma_baselines.ipynb) · [05 summary basel
 | Logistic regression | 0.449    | 0.373 | 0.813     |
 | Decision tree       | 0.360    | 0.272 | 0.740     |
 | Gaussian NB         | 0.349    | 0.287 | 0.781     |
+| Categorical NB      | 0.414    | 0.343 | 0.812     |
 | KNN                 | 0.294    | 0.199 | 0.666     |
 | ZeroR               | 0.028    | 0.000 | 0.500     |
 
@@ -175,11 +177,11 @@ Notebooks: [03 baselines](notebooks/03_fma_baselines.ipynb) · [05 summary basel
 
 **Inputs:** the standardised FMA features (MLP) and per-band standardised spectrograms (CNN). **Outputs:** an MLP compared over 4 architectures plus a learning-rate check, and 3 CNNs trained on a Kaggle T4 GPU, each selected on validation and scored once on test. The MLP does not beat the random forest, which supports H2 (any gain is small). The CNN beats the summary-feature baseline by 0.106 macro-F1, which supports H3.
 
-Notebooks: [04 MLP](/notebooks/04_fma_mlp.ipynb) · [06 CNN](notebooks/06_spec_cnn.ipynb) · [07 final results](notebooks/07_results.ipynb)
+Notebooks: [04 MLP](notebooks/04_fma_mlp.ipynb) · [06 CNN](notebooks/06_spec_cnn.ipynb) · [07 final results](notebooks/07_results.ipynb)
 
 | Pipeline         | Model                                 | Macro-F1 | MCC   | Macro-AUC |
 | ---------------- | ------------------------------------- | -------- | ----- | --------- |
-| A (FMA)          | MLP (256 units, lr 1e-4)              | 0.463    | 0.389 | 0.811     |
+| A (FMA)          | MLP (256 units, lr 1e-4)              | 0.466    | 0.392 | 0.811     |
 | A (FMA)          | Random forest (best classical)        | 0.487    | 0.417 | 0.828     |
 | B (spectrograms) | CNN (4 blocks, dropout)               | 0.852    | 0.824 | 0.984     |
 | B (spectrograms) | Logistic regression, summary features | 0.745    | 0.697 | 0.940     |
