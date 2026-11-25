@@ -1,0 +1,16 @@
+{
+  "name": "gmm_k8",
+  "pipeline": "fma_clustering",
+  "split": "training",
+  "metrics": {
+    "ari": 0.0232,
+    "nmi": 0.0514,
+    "silhouette": -0.0933
+  },
+  "params": {
+    "k": 8,
+    "pca_components": 143
+  },
+  "notes": "",
+  "saved": "2026-11-25T20:16:47"
+}
