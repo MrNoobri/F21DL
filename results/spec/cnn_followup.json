@@ -1,0 +1,22 @@
+{
+  "name": "cnn_followup",
+  "pipeline": "spec",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.9233,
+    "macro_precision": 0.9238,
+    "macro_recall": 0.9233,
+    "macro_f1": 0.9227,
+    "macro_fpr": 0.0153,
+    "mcc": 0.9083,
+    "macro_auc_ovr": 0.9931
+  },
+  "params": {
+    "setup": "C, lr 3e-4",
+    "lr": 0.0003,
+    "augment": false,
+    "epochs": 40
+  },
+  "notes": "Rebuilt from the printed outputs of notebooks/08_spec_cnn_followup.ipynb (Kaggle session ended before the output zip was downloaded). Macro precision, recall and FPR are the means of the per-genre values.",
+  "saved": "2026-11-25T22:20:00"
+}

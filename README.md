@@ -121,6 +121,7 @@ Running it again gives the same splits. Then run the notebooks in order:
 | `04_fma_mlp`           | Keras MLP, 4 architectures, learning-rate check, overfitting experiment, bootstrap comparison with the random forest | FMA |
 | `05_spec_eda_baseline` | Spectrogram EDA, leakage check, logistic regression on summary features   | spectrograms      |
 | `06_spec_cnn`          | 3 CNN architectures (Kaggle GPU, about 25 min)                            | spectrograms, GPU |
+| `08_spec_cnn_followup` | Follow-up for CNN C: SpecAugment and a lower learning rate (Kaggle GPU, about 35 min) | spectrograms, GPU |
 | `07_results`           | Final tables, hypothesis verdicts, error analysis, notebook run check     | FMA               |
 
 ## Repository layout
@@ -177,13 +178,14 @@ Notebooks: [03 baselines](notebooks/03_fma_baselines.ipynb) · [05 summary basel
 
 **Inputs:** the standardised FMA features (MLP) and per-band standardised spectrograms (CNN). **Outputs:** an MLP compared over 4 architectures plus a learning-rate check, and 3 CNNs trained on a Kaggle T4 GPU, each selected on validation and scored once on test. The MLP does not beat the random forest, which supports H2 (any gain is small). The CNN beats the summary-feature baseline by 0.106 macro-F1, which supports H3.
 
-Notebooks: [04 MLP](notebooks/04_fma_mlp.ipynb) · [06 CNN](notebooks/06_spec_cnn.ipynb) · [07 final results](notebooks/07_results.ipynb)
+Notebooks: [04 MLP](notebooks/04_fma_mlp.ipynb) · [06 CNN](notebooks/06_spec_cnn.ipynb) · [08 CNN follow-up](notebooks/08_spec_cnn_followup.ipynb) · [07 final results](notebooks/07_results.ipynb)
 
 | Pipeline         | Model                                 | Macro-F1 | MCC   | Macro-AUC |
 | ---------------- | ------------------------------------- | -------- | ----- | --------- |
 | A (FMA)          | MLP (256 units, lr 1e-4)              | 0.466    | 0.392 | 0.811     |
 | A (FMA)          | Random forest (best classical)        | 0.487    | 0.417 | 0.828     |
-| B (spectrograms) | CNN (4 blocks, dropout)               | 0.852    | 0.824 | 0.984     |
+| B (spectrograms) | CNN (4 blocks, dropout, lr 3e-4; notebook 08) | 0.923 | 0.908 | 0.993 |
+| B (spectrograms) | CNN (4 blocks, dropout, lr 1e-3; notebook 06) | 0.852 | 0.824 | 0.984 |
 | B (spectrograms) | Logistic regression, summary features | 0.745    | 0.697 | 0.940     |
 
 ![CNN confusion matrix on the spectrogram test set](figures/spec_cnn_confusion.png)
