@@ -176,7 +176,7 @@ Notebooks: [03 baselines](notebooks/03_fma_baselines.ipynb) · [05 summary basel
 
 ### R4: Neural networks
 
-**Inputs:** the standardised FMA features (MLP) and per-band standardised spectrograms (CNN). **Outputs:** an MLP compared over 4 architectures plus a learning-rate check, and 3 CNNs trained on a Kaggle T4 GPU, each selected on validation and scored once on test. The MLP does not beat the random forest, which supports H2 (any gain is small). The CNN beats the summary-feature baseline by 0.106 macro-F1, which supports H3.
+**Inputs:** the standardised FMA features (MLP) and per-band standardised spectrograms (CNN). **Outputs:** an MLP compared over 4 architectures plus a learning-rate check, and 3 CNNs trained on a Kaggle T4 GPU, each selected on validation and scored once on test. The MLP does not beat the random forest, which supports H2 (any gain is small). The CNN beats the summary-feature baseline by 0.106 macro-F1, and by 0.178 after a lower learning rate in the follow-up, which supports H3.
 
 Notebooks: [04 MLP](notebooks/04_fma_mlp.ipynb) · [06 CNN](notebooks/06_spec_cnn.ipynb) · [08 CNN follow-up](notebooks/08_spec_cnn_followup.ipynb) · [07 final results](notebooks/07_results.ipynb)
 
