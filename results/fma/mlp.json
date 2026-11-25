@@ -3,13 +3,13 @@
   "pipeline": "fma",
   "split": "test",
   "metrics": {
-    "accuracy": 0.465,
-    "macro_precision": 0.4615,
-    "macro_recall": 0.465,
-    "macro_f1": 0.4625,
-    "macro_fpr": 0.0764,
-    "mcc": 0.3888,
-    "macro_auc_ovr": 0.8111
+    "accuracy": 0.4675,
+    "macro_precision": 0.4648,
+    "macro_recall": 0.4675,
+    "macro_f1": 0.4655,
+    "macro_fpr": 0.0761,
+    "mcc": 0.3916,
+    "macro_auc_ovr": 0.8107
   },
   "params": {
     "hidden": [
@@ -18,9 +18,9 @@
     "dropout": 0.0,
     "l2": 0.0,
     "lr": 0.0001,
-    "epochs": 34,
+    "epochs": 29,
     "n_params": 134920
   },
   "notes": "",
-  "saved": "2026-11-20T14:58:25"
+  "saved": "2026-11-25T21:12:12"
 }
